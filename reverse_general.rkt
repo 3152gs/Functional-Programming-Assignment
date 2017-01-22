@@ -1,5 +1,6 @@
-(define reverse-general L
+(define (reverse-general L)
   (cond
-    (null? (L) (return L))
+    ((NULL? L) L)
+    (not (NULL? L) CAR L))
+    (reverse-general (CDR L))
     )
-  )
