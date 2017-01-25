@@ -1,7 +1,7 @@
 (define (sum-up-numbers-simple L)
     (cond
-      ((NULL? L) L)
-      ((LIST? (car L)) (cdr L))
+      ((NULL? L) 0)
+      ((LIST? (car L)) (+ (sum-up-numbers-simple (cdr L)) (car L)))
       (else (+ (sum-up-numbers-simple (cdr L)) (car L)))
       )
-    ) 
+    )
