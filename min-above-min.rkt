@@ -12,8 +12,8 @@
     )
 (define (min-above-min L1 L2)
   (cond
-    ((null? L1) #f) ;return false if L1 is an empty list
-    ((> (find-min(L1))(find-min(L2)))(find-min(L2))) ;if the minimum of L1 is already greater than minimum of L2 then return min of L2
+    ((null? L1) #f)  ;return false if L1 is an empty list
+    ((null? L2) (find-min L1)) ; if L2 is null return the minimum of L1
+    ((> (find-min L1)(find-min L2))(find-min L1)) ;if the minimum of L1 is already greater than minimum of L2 then return min of L2
     )
   )
-    
