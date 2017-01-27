@@ -4,5 +4,8 @@
     (cond
       ((null? L) L)    ;if a list is empty then the minimum in that list is null
       ((null? (cdr L)) (car L)) ;if the list has only one item then the only element is minimum
+      ((< (car L)(find-min (cdr L)))
+          (car L)
+          )
       )
     )
