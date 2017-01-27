@@ -45,6 +45,14 @@
       (else (find-min(cdr L)))
       )
     )
+;Helper function to delete an item from the list
+(define (delete_atm atm L)
+  (cond
+    ((null? L) L) ;base case
+    ((not (= atm (car L))) (cons(car L)(delete_atm atm (cdr L)))) ;if the given atom is not equal to the first item add it to the new list
+    )
+  )
+;main function
 (define (min-above-min L1 L2)
   (cond
     ((null? (find-min L1)) #f) ;if L1 either contains char or its minimum is null, then return false
