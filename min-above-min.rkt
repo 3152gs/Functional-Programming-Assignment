@@ -3,12 +3,18 @@
 (define (find-min L)
     (cond
       ((null? L) L)    ;if a list is empty then the minimum in that list is null
-      ((null? (cdr L))(car L)) ;if the list has only one item then the only element is minimum
-      ((not (number? (car L))) (find-min(cdr L))) ;check if the item is number or not
-      ((not (number? (CDR L))) (car L))
-      ((< (car L)(find-min (cdr L))) ; the recursive case
+      ((not (number? (car L))) (find-min(cdr L))) ;if the item is non-number ignore it
+      (if (not (number? (find-min(cdr L))))
+          (car L) ;if a non-numeric character is returned, then the number before that has to returned to compare
+          (
+           ((null? (cdr L)) (car L)) ;if the list has only one item then the only element is minimum
+           ((< (car L)(find-min (cdr L))) ; Compare the values
           (car L)
+          
           )
+           )
+          )
+          
       (else (find-min(cdr L)))
       )
     )
