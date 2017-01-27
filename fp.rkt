@@ -50,6 +50,7 @@
   (cond
     ((null? L) L) ;base case
     ((not (= atm (car L))) (cons(car L)(delete_atm atm (cdr L)))) ;if the given atom is not equal to the first item add it to the new list
+    (= atm (car L) (delete_atm atm (cdr L))) ;if the given atom is equal to the first item, do not add it to the list
     )
   )
 ;main function
